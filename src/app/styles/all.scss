@@ -1,0 +1,386 @@
+@use "sass:math";
+
+$back-color:#141414;
+$p-color:#f6f6f6;
+
+*{
+    background-color: $back-color;
+    color:$p-color;
+    
+}
+
+%grid-center{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+/*** header ***/
+
+.header{
+    font-size: small;
+    display: grid;
+    grid-template-columns: repeat(2,max-content) 1fr;
+    grid-gap: 24px;
+    margin: 24px 0 24px 0;
+    align-items: center;
+
+    .logo{
+        width: max-content;
+    }
+
+    .menus{
+        display: grid;
+        grid-template-columns: repeat(6,max-content);
+        grid-gap: 20px;
+    }
+
+    .head-right{
+        display: grid;
+        justify-content: end;
+        align-items: center;
+        grid-template-columns: repeat(4,max-content);
+        grid-gap: 20px;
+
+        .search{
+            position: relative;
+            
+            @extend %grid-center;
+            .search-input{
+                width: 280px;
+                padding: 4px 8px 4px 32px; 
+                border: 2px solid $p-color;
+                height: 40px;
+            }
+            .search-input:focus{
+                border-radius: 0px;
+                border: 2px solid $p-color;
+            }
+            
+            .crosss, .icone-search{
+                position: absolute;
+                background-color: #14141400;
+            }
+            .crosss{
+                right:4px;
+            }
+            
+            .icone-search{
+                position: absolute;
+                left:6px;
+                background: transparent;
+            }
+        }
+
+        
+        
+
+        .profile{
+            display: grid;
+            grid-gap:4px;
+            align-items: center;
+            grid-template-columns: repeat(2,max-content);
+        }
+    }
+
+    
+}
+
+.notif{
+    position: relative;
+}
+
+.spann{
+    position :absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    border-radius: 50%;
+    width:18px;
+    height:18px;
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    font-size: smaller;
+    transform: translateY(-6px) translateX(6px);
+}
+
+
+
+.img-pro{
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    background-image: url(../../../public/profile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.link{
+    opacity: 0.7;
+}
+.link:hover{
+    cursor: pointer;
+   text-decoration: underline;
+}
+
+
+.active{
+    opacity: 1;
+}
+
+/***fin header ***/
+
+
+
+
+/****suggestion****/
+.explore{
+    font-size: large;
+    margin: 124px 0 24px 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+
+    .more{
+        opacity: 0.5;
+    }
+    
+    .bordered{
+        width: max-content;
+        padding: 4px 12px 4px 12px;
+        border-right: 1px solid rgba(255, 255, 255, 0.288)
+    }
+    .fin{
+        border-right: none !important;
+    }
+}
+
+
+
+
+.linka:hover{
+    cursor: pointer;
+   text-decoration: underline;
+}
+/****fin suggestion****/
+
+
+/*****card*******/
+.carts{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap: 12px;
+    row-gap: 64px;
+}
+.carda{
+    transform-origin: center center;
+    height: 160px;
+    border: 3px solid #9cf0ff00;
+    border-radius: 6px;
+    background-color: rgba(255, 0, 0, 0);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.3s all ease-in-out;
+}
+.carda:hover{
+    z-index: 10;
+    border: 3px solid #9cf0ff;
+    box-shadow: 0px 4px 15px #9cf0ff;
+    transform: scale(1.1);
+}
+
+
+
+.image-card {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    padding: 10px;
+  }
+
+  .skeleton {
+    background-color: #333; // Couleur de fond sombre pour le mode sombre
+  }
+
+/*****fin carda*****/
+
+.b-0{
+    background-color: transparent;
+}
+
+.menus-mob{
+    
+    overflow: hidden;
+    justify-self: center;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    display: grid;
+    z-index: 99;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(44, 44, 44);
+
+    .menu-mob0{
+        display: grid;
+        grid-auto-flow: column;
+        justify-self: start;
+        grid-gap: 24px;
+    }
+    
+}
+
+.search-mob{
+    display:none
+}
+
+
+.head-right-mob{
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    grid-template-columns: repeat(2,max-content);
+    grid-gap: 20px;
+    background: transparent;
+    .notif,.profile{
+        background: transparent;
+    }
+    .profile{
+        display: grid;
+        grid-gap:4px;
+        align-items: center;
+        grid-template-columns: repeat(2,max-content);
+    }
+}
+
+.quit-menu , .mobile-menu {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 4px;
+    border-radius: 4px;
+    transition: .1s ease-in-out;
+}
+.quit-menu:hover , .mobile-menu:hover{
+    background-color: rgba(255, 255, 255, 0.123);
+    border-radius: 4px;
+}
+
+.mobile-menu {
+    display: grid;
+    justify-self: end;
+}
+
+/*****Responsive header*****/
+.mobile-menu{
+    display: none;
+}
+
+@media only screen and (max-width: 1250px) {
+    .menus-mob{
+        display: grid;
+    }
+    .mobile-menu{
+        display: initial;
+        display: grid;
+        align-content: center;
+        justify-content: end;
+        justify-items: end;
+    }
+    .header{
+        grid-template-columns: repeat(2,1fr) !important;
+
+    }
+    .head-right{
+        display:none!important;
+    }
+    .menu{
+        display:none;
+    }
+
+    .explore{
+        margin-top: 32px!important;
+    }
+
+    .search-mob{
+    
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        
+        .parent{
+            position: relative;
+            width: max-content;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        .search-input{
+            
+            width: 260px;
+            padding: 4px 8px 4px 32px; 
+            border: 2px solid $p-color;
+            height: 40px;
+        }
+        .search-input:focus{
+            border-radius: 0px;
+            border: 2px solid $p-color;
+        }
+        
+        .crosss, .icone-search{
+            position: absolute;
+            background-color: transparent;
+            z-index: 0;
+        }
+        .crosss{
+            right:4px;
+        }
+        
+        .icone-search{
+            position: absolute;
+            left:6px;
+            background: transparent;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+   
+   .header{
+        grid-gap: 24px!important;
+   }
+    .explore{
+        grid-template-columns: none;
+        grid-template-rows: max-content 1fr!important;
+        font-size: smaller!important;
+    }
+}
+@media only screen and (max-width: 770px) {
+    
+    .menus-mob{
+        align-items: flex-start;
+        grid-template-columns: 1fr 1fr;
+        .menu-mob0{
+            display: grid;
+            grid-auto-flow: row;
+            justify-self: center;
+            grid-gap: 8px;
+        }
+    }
+}
+/*****fin responsive header*****/

@@ -1,0 +1,406 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./node_modules/react-loading-skeleton/dist/skeleton.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+@keyframes react-loading-skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.react-loading-skeleton {
+  --base-color: #ebebeb;
+  --highlight-color: #f5f5f5;
+  --animation-duration: 1.5s;
+  --animation-direction: normal;
+  --pseudo-element-display: block; /* Enable animation */
+
+  background-color: var(--base-color);
+
+  width: 100%;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  line-height: 1;
+
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  z-index: 1; /* Necessary for overflow: hidden to work correctly in Safari */
+}
+
+.react-loading-skeleton::after {
+  content: ' ';
+  display: var(--pseudo-element-display);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    90deg,
+    var(--base-color),
+    var(--highlight-color),
+    var(--base-color)
+  );
+  transform: translateX(-100%);
+
+  animation-name: react-loading-skeleton;
+  animation-direction: var(--animation-direction);
+  animation-duration: var(--animation-duration);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion) {
+  .react-loading-skeleton {
+    --pseudo-element-display: none; /* Disable animation */
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[12].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[12].oneOf[13].use[5]!./src/app/styles/all.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+* {
+  background-color: #141414;
+  color: #f6f6f6;
+}
+
+.header .head-right .search {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/*** header ***/
+.header {
+  font-size: small;
+  display: grid;
+  grid-template-columns: repeat(2, max-content) 1fr;
+  grid-gap: 24px;
+  margin: 24px 0 24px 0;
+  align-items: center;
+}
+.header .logo {
+  width: -moz-max-content;
+  width: max-content;
+}
+.header .menus {
+  display: grid;
+  grid-template-columns: repeat(6, max-content);
+  grid-gap: 20px;
+}
+.header .head-right {
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  grid-template-columns: repeat(4, max-content);
+  grid-gap: 20px;
+}
+.header .head-right .search {
+  position: relative;
+}
+.header .head-right .search .search-input {
+  width: 280px;
+  padding: 4px 8px 4px 32px;
+  border: 2px solid #f6f6f6;
+  height: 40px;
+}
+.header .head-right .search .search-input:focus {
+  border-radius: 0px;
+  border: 2px solid #f6f6f6;
+}
+.header .head-right .search .crosss, .header .head-right .search .icone-search {
+  position: absolute;
+  background-color: rgba(20, 20, 20, 0);
+}
+.header .head-right .search .crosss {
+  right: 4px;
+}
+.header .head-right .search .icone-search {
+  position: absolute;
+  left: 6px;
+  background: transparent;
+}
+.header .head-right .profile {
+  display: grid;
+  grid-gap: 4px;
+  align-items: center;
+  grid-template-columns: repeat(2, max-content);
+}
+
+.notif {
+  position: relative;
+}
+
+.spann {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-size: smaller;
+  transform: translateY(-6px) translateX(6px);
+}
+
+.img-pro {
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  background-image: url(/_next/static/media/profile.14d0bf3c.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.link {
+  opacity: 0.7;
+}
+
+.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.active {
+  opacity: 1;
+}
+
+/***fin header ***/
+/****suggestion****/
+.explore {
+  font-size: large;
+  margin: 124px 0 24px 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+.explore .more {
+  opacity: 0.5;
+}
+.explore .bordered {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 4px 12px 4px 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.288);
+}
+.explore .fin {
+  border-right: none !important;
+}
+
+.linka:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/****fin suggestion****/
+/*****card*******/
+.carts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  row-gap: 64px;
+}
+
+.carda {
+  transform-origin: center center;
+  height: 160px;
+  border: 3px solid rgba(156, 240, 255, 0);
+  border-radius: 6px;
+  background-color: rgba(255, 0, 0, 0);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.3s all ease-in-out;
+}
+
+.carda:hover {
+  z-index: 10;
+  border: 3px solid #9cf0ff;
+  box-shadow: 0px 4px 15px #9cf0ff;
+  transform: scale(1.1);
+}
+
+.image-card {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  padding: 10px;
+}
+
+.skeleton {
+  background-color: #333;
+}
+
+/*****fin carda*****/
+.b-0 {
+  background-color: transparent;
+}
+
+.menus-mob {
+  overflow: hidden;
+  justify-self: center;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  padding: 24px;
+  grid-template-columns: 80% 20%;
+  display: grid;
+  z-index: 99;
+  justify-items: center;
+  align-items: center;
+  background-color: rgb(44, 44, 44);
+}
+.menus-mob .menu-mob0 {
+  display: grid;
+  grid-auto-flow: column;
+  justify-self: start;
+  grid-gap: 24px;
+}
+
+.search-mob {
+  display: none;
+}
+
+.head-right-mob {
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 20px;
+  background: transparent;
+}
+.head-right-mob .notif, .head-right-mob .profile {
+  background: transparent;
+}
+.head-right-mob .profile {
+  display: grid;
+  grid-gap: 4px;
+  align-items: center;
+  grid-template-columns: repeat(2, max-content);
+}
+
+.quit-menu, .mobile-menu {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 4px;
+  border-radius: 4px;
+  transition: 0.1s ease-in-out;
+}
+
+.quit-menu:hover, .mobile-menu:hover {
+  background-color: rgba(255, 255, 255, 0.123);
+  border-radius: 4px;
+}
+
+.mobile-menu {
+  display: grid;
+  justify-self: end;
+}
+
+/*****Responsive header*****/
+.mobile-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 1250px) {
+  .menus-mob {
+    display: grid;
+  }
+  .mobile-menu {
+    display: initial;
+    display: grid;
+    align-content: center;
+    justify-content: end;
+    justify-items: end;
+  }
+  .header {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .head-right {
+    display: none !important;
+  }
+  .menu {
+    display: none;
+  }
+  .explore {
+    margin-top: 32px !important;
+  }
+  .search-mob {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+  .search-mob .parent {
+    position: relative;
+    width: -moz-max-content;
+    width: max-content;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .search-mob .search-input {
+    width: 260px;
+    padding: 4px 8px 4px 32px;
+    border: 2px solid #f6f6f6;
+    height: 40px;
+  }
+  .search-mob .search-input:focus {
+    border-radius: 0px;
+    border: 2px solid #f6f6f6;
+  }
+  .search-mob .crosss, .search-mob .icone-search {
+    position: absolute;
+    background-color: transparent;
+    z-index: 0;
+  }
+  .search-mob .crosss {
+    right: 4px;
+  }
+  .search-mob .icone-search {
+    position: absolute;
+    left: 6px;
+    background: transparent;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .header {
+    grid-gap: 24px !important;
+  }
+  .explore {
+    grid-template-columns: none;
+    grid-template-rows: max-content 1fr !important;
+    font-size: smaller !important;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .menus-mob {
+    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
+  }
+  .menus-mob .menu-mob0 {
+    display: grid;
+    grid-auto-flow: row;
+    justify-self: center;
+    grid-gap: 8px;
+  }
+}
+/*****fin responsive header*****/
